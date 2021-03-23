@@ -1,0 +1,30 @@
+{
+  "name": "skeleton-mongodb",
+  "version": "0.0.0",
+  "description": "Brief_description_of_the_project",
+  "private": true,
+  "keywords": [],
+  "author": "thumperL",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "DEBUG=skeletonapp:* nodemon ./bin/www",
+    "seedUser": "node models/seeds/userSeeder.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~4.3.1",
+    "dotenv": "^8.2.0",
+    "express": "~4.17.1",
+    "express-handlebars": "~5.2.1",
+    "http-errors": "~1.8.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.1",
+    "morgan": "~1.10.0",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

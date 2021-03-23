@@ -1,0 +1,16 @@
+<form action="/{{#if restaurantData._id}}{{ restaurantData._id }}?_method=PUT{{/if}}" method="POST"
+  class="container mt-5 mb-4">
+  {{#if error}}
+    <div class="alert alert-danger" role="alert">
+      {{#each error}}
+        {{this}}
+      {{/each}}
+    </div>
+  {{/if}}
+  <div class="form-group">
+    <label for="somefield">somefield</label>
+    <input type="text" class="form-control" placeholder="somefield" name="somefield" required {{#if data.somefield}} value="{{data.somefield}}" {{/if}}>
+  </div>
+  <button type="submit" class="btn btn-success">Save</button>
+  <a href="/" class="btn btn-danger">back</a>
+</form>

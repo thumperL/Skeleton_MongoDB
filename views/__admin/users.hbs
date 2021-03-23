@@ -1,0 +1,42 @@
+<div class="container mb-3">
+  <div class="row d-flex justify-content-between">
+    <h1 class="mb-0">Backend</h1>
+    <div class="d-flex justify-content-end align-items-center">
+      <a class="ml-1" href="/admin/users">User Management</a>
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">#</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+      <tr>
+        <td class="align-middle">{{this.name}}</td>
+        <td class="align-middle">{{this.email}}</td>
+        <td class="align-middle">{{#if isAdmin}}Admin{{else}}User{{/if}}</td>
+        <td>
+          {{#if isAdmin}}
+            <form action="/admin/users/{{this._id}}/toggleAdmin?_method=PUT" method="POST">
+              <button type="submit" class="btn btn-link">Set as user</button>
+            </form>
+          {{else}}
+            <form action="/admin/users/{{this._id}}/toggleAdmin?_method=PUT" method="POST">
+              <button type="submit" class="btn btn-link">Set as administrator</button>
+            </form>
+            <form action="/admin/users/{{this._id}}?_method=DELETE" method="POST">
+              <button type="submit" class="btn btn-link">Delete user</button>
+            </form>
+          {{/if}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
