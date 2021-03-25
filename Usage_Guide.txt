@@ -39,6 +39,9 @@
 ####
 ## Login Facebook (passport-facebook [strategy])
 #### npm i passport-facebook
+####
+## Login Google (passport-google-oauth [strategy])
+#### npm i passport-google-oauth
 ############
 ## IMGUR image hosting
 #### npm install imgur
