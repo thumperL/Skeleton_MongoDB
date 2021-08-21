@@ -4,6 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const createError = require('http-errors');
 const express = require('express');
+const helmet = require('helmet');
 const path = require('path');
 const expressHandlebars = require('express-handlebars');
 const cookieParser = require('cookie-parser');
@@ -21,6 +22,7 @@ const routes = require('./routes');
 require('./config/mongoose');
 
 const app = express();
+app.use(helmet());
 
 /* View engine setup */
 app.engine('hbs', expressHandlebars({ defaultLayout: 'main', extname: '.hbs' }));
